@@ -77,25 +77,31 @@ def set_data():
         if html.status_code == 200:
             print(f'Ok with {hero}')
             soup = BeautifulSoup(html.text, 'html.parser')
-            items = soup.find_all('div', class_='market_listing_row market_recent_listing_row market_listing_searchresult')
+            items = soup.find_all('div',
+                                  class_='market_listing_row market_recent_listing_row market_listing_searchresult')
 
             prices = []
 
             for item in items:
                 name = item.find('span', class_='market_listing_item_name').get_text()
                 price = float(
-                    item.find('span', class_='market_table_value normal_price').find('span', class_='normal_price').get_text()[1:-4].replace(',', ''))
+                    item.find('span', class_='market_table_value normal_price').find('span',
+                                                                                     class_='normal_price').get_text()[
+                    1:-4].replace(',', ''))
 
                 if 'Voice' not in name and 'Bundle' not in name and 'Call' not in name:
                     prices.append(price)
-            ARCANA_PRICE[hero] = min(prices)
+            try:
+                ARCANA_PRICE[hero] = min(prices)
+            except:
+                ARCANA_PRICE[hero] = 30.17
         else:
             print(f'Error with {hero}')
 
 
 def get_hero_arcana_price(hero):
     if hero in HERO:
-        return ARCANA_PRICE[hero]
+        return hero + ': ' + str(ARCANA_PRICE[hero])
     else:
         print('Error')
 
