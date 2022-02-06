@@ -49,7 +49,6 @@ async def set_time(message: types.Message, state: FSMContext):
         one_day.append(message.from_user.id)
     if message.text == '2 day':
         two_day.append(message.from_user.id)
-
     await message.answer('Information saved', reply_markup=menu_keyboard)
     await state.set_state('full_access')
 
