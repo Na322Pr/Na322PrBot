@@ -12,20 +12,20 @@ async def change_data(message: types.Message, state: FSMContext):
     await message.answer(text='What would you like to change?', reply_markup=set_data_keyboard)
 
 
-@dp.message_handler(text='Get over me', state='full_access')
+@dp.message_handler(text='Delete data', state='full_access')
 async def get_over_me(message: types.Message, state: FSMContext):
-    await state.set_state('get_over_me')
+    await state.set_state('delete_data')
     await message.answer(text='Are you sure?', reply_markup=get_over_me_keyboard)
 
 
-@dp.message_handler(text='Yes', state='get_over_me')
+@dp.message_handler(text='Yes', state='delete_data')
 async def get_over_me(message: types.Message, state: FSMContext):
-    await state.set_state('get_over_me')
+    await state.set_state('delete_data')
     await state.finish()
     await message.answer(text='Your data has been deleted.\nIf you want to use the bot in the future, type /start')
 
 
-@dp.message_handler(text='No', state='get_over_me')
+@dp.message_handler(text='No', state='delete_data')
 async def get_over_me(message: types.Message, state: FSMContext):
     await state.set_state('full_access')
     await message.answer(text="Okey", reply_markup=menu_keyboard)

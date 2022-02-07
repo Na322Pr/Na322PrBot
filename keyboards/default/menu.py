@@ -5,7 +5,7 @@ menu_keyboard = ReplyKeyboardMarkup(keyboard=[
         KeyboardButton(text='Change data')
     ],
     [
-        KeyboardButton(text='Get over me'),
+        KeyboardButton(text='Delete data'),
     ]
 ], resize_keyboard=True, one_time_keyboard=True)
 
