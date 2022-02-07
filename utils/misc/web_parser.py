@@ -15,21 +15,7 @@ HERO = ['Ogre Magi',
         'Legion Commander',
         'Lina']
 
-ARCANA_NAME = {
-    'Ogre Magi': "Flockheart's Gamble",
-    'Pudge': 'Feast of Abscession',
-    'Rubick': 'The Magus Cypher',
-    'Juggernaut': 'Bladeform Legacy',
-    'Monkey King': "Great Sage's Reckoning",
-    'Zeus': 'TempestHelm of the Thundergod',
-    'Crystal Maiden': 'Frost Avalanche',
-    'Phantom Assassin': 'Manifold Paradox',
-    'Shadow Fiend': 'Demon Eater',
-    'Techies': 'Swine of the Sunken Galley',
-    'Terrorblade': 'Fractal Horns of Inner Abysm',
-    'Legion Commander': 'Blades of Voth Domosh',
-    'Lina': 'Fiery Soul of the Slayer'
-}
+
 
 ARCANA_LINK = {
     'Ogre Magi': "ogre_magi",

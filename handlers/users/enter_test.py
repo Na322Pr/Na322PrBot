@@ -44,6 +44,6 @@ async def enter_test_q2(message: types.Message, state: FSMContext):
     set_frequency(answer, user)
 
     await message.answer(
-        'Initial setup complete.\nNow you can:\nLearn information about this bot in Info\nsomething in help\nchange data',
+        'Initial setup complete.\nNow you can:\nChange your data\nDelete your data\n',
         reply_markup=menu_keyboard)
     await state.set_state('full_access')
