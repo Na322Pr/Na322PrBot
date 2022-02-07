@@ -94,7 +94,7 @@ def set_data():
             try:
                 ARCANA_PRICE[hero] = min(prices)
             except:
-                ARCANA_PRICE[hero] = 30.17
+                pass
         else:
             print(f'Error with {hero}')
 
