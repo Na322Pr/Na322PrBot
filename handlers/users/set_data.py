@@ -22,7 +22,7 @@ async def set_time(message: types.Message, state: FSMContext):
 
     set_frequency(answer, user)
     await message.answer('Information saved', reply_markup=menu_keyboard)
-    await state.set_state('full_access')
+    await state.set_state('menu')
 
 
 @dp.message_handler(text='Change the selected arcana', state='set_data')
@@ -51,4 +51,4 @@ async def hero_pick(message: types.Message):
 @dp.message_handler(text='Закончить', state='set_hero')
 async def answer_q1(message: types.Message, state: FSMContext):
     await message.answer('Information saved', reply_markup=menu_keyboard)
-    await state.set_state('full_access')
+    await state.set_state('menu')

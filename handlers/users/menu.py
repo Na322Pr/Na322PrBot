@@ -6,13 +6,13 @@ from aiogram import types
 from keyboards.default import set_data_keyboard, menu_keyboard, delete_data_keyboard
 
 
-@dp.message_handler(text='Change data', state='full_access')
+@dp.message_handler(text='Change data', state='menu')
 async def change_data(message: types.Message, state: FSMContext):
     await state.set_state('set_data')
     await message.answer(text='What would you like to change?', reply_markup=set_data_keyboard)
 
 
-@dp.message_handler(text='Delete data', state='full_access')
+@dp.message_handler(text='Delete data', state='menu')
 async def get_over_me(message: types.Message, state: FSMContext):
     await state.set_state('delete_data')
     await message.answer(text='Are you sure?', reply_markup=delete_data_keyboard)
@@ -27,5 +27,5 @@ async def get_over_me(message: types.Message, state: FSMContext):
 
 @dp.message_handler(text='No', state='delete_data')
 async def get_over_me(message: types.Message, state: FSMContext):
-    await state.set_state('full_access')
+    await state.set_state('menu')
     await message.answer(text="Okey", reply_markup=menu_keyboard)

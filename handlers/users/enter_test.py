@@ -46,4 +46,4 @@ async def enter_test_q2(message: types.Message, state: FSMContext):
     await message.answer(
         'Initial setup complete.\nNow you can:\nChange your data\nDelete your data\n',
         reply_markup=menu_keyboard)
-    await state.set_state('full_access')
+    await state.set_state('menu')
