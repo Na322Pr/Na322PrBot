@@ -3,7 +3,7 @@ from loader import dp
 from aiogram.dispatcher.filters import Command, Text
 from aiogram import types
 
-from keyboards.default import set_data_keyboard, menu_keyboard, get_over_me_keyboard
+from keyboards.default import set_data_keyboard, menu_keyboard, delete_data_keyboard
 
 
 @dp.message_handler(text='Change data', state='full_access')
@@ -15,7 +15,7 @@ async def change_data(message: types.Message, state: FSMContext):
 @dp.message_handler(text='Delete data', state='full_access')
 async def get_over_me(message: types.Message, state: FSMContext):
     await state.set_state('delete_data')
-    await message.answer(text='Are you sure?', reply_markup=get_over_me_keyboard)
+    await message.answer(text='Are you sure?', reply_markup=delete_data_keyboard)
 
 
 @dp.message_handler(text='Yes', state='delete_data')

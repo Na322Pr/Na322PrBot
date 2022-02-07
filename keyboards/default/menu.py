@@ -18,7 +18,7 @@ set_data_keyboard = ReplyKeyboardMarkup(keyboard=[
     ]
 ], resize_keyboard=True, one_time_keyboard=True)
 
-get_over_me_keyboard = ReplyKeyboardMarkup(keyboard=[
+delete_data_keyboard = ReplyKeyboardMarkup(keyboard=[
     [
         KeyboardButton(text='Yes')
     ],
