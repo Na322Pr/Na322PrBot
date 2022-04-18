@@ -1,9 +1,9 @@
 import asyncio
 
-from utils.misc import set_data
 from utils.set_bot_commands import set_default_commands
 
 from utils.misc.sending_out_messages import send_out_message
+from utils.misc.web_parser import gather_data
 
 
 async def on_startup(dp):
@@ -21,7 +21,9 @@ async def periodic(sleep_for):
     time_counter = 0
     while True:
         time_counter += 1
-        await asyncio.sleep(sleep_for)
+        await asyncio.sleep(sleep_for - 10)
+        await gather_data()
+        await asyncio.sleep(10)
         await send_out_message(time_counter)
 
 

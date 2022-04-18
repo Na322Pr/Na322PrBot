@@ -6,7 +6,6 @@ from aiogram.dispatcher.filters.builtin import CommandStart
 from keyboards.default import time_pick_keyboard, hero_pick_keyboard, okey_keyboard
 from loader import dp
 
-from utils.misc import get_all_arcana_prices
 
 
 @dp.message_handler(CommandStart())

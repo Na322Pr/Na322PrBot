@@ -2,5 +2,6 @@ aiogram<3.0
 aiohttp==3.6.2
 aioredis<2.0
 python-dotenv
-requests
 bs4
+asyncio
+aiohttp
