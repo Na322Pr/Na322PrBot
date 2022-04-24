@@ -41,6 +41,6 @@ hero_pick_keyboard = ReplyKeyboardMarkup(keyboard=[
         KeyboardButton(text='Zeus'),
     ],
     [
-        KeyboardButton(text='Закончить')
+        KeyboardButton(text='Finish')
     ]
 ])

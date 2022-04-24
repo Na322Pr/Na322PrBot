@@ -31,7 +31,7 @@ async def hero_pick(message: types.Message):
     await message.answer(f"Selected characters:\n{', '.join(sup)}")
 
 
-@dp.message_handler(text='Закончить', state='enter_test_q1')
+@dp.message_handler(text='Finish', state='enter_test_q1')
 async def answer_q1(message: types.Message, state: FSMContext):
     await message.answer("Choose how often you want to receive information.", reply_markup=time_pick_keyboard)
     await state.set_state('enter_test_q2')

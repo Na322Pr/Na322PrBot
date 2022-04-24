@@ -48,7 +48,7 @@ async def hero_pick(message: types.Message):
     await message.answer(f"Selected characters:\n{', '.join(sup)}")
 
 
-@dp.message_handler(text='Закончить', state='set_hero')
+@dp.message_handler(text='Finish', state='set_hero')
 async def answer_q1(message: types.Message, state: FSMContext):
     await message.answer('Information saved', reply_markup=menu_keyboard)
     await state.set_state('menu')

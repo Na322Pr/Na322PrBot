@@ -20,5 +20,5 @@ async def send_out_message(time_counter):
     for user in lst:
         s = ''
         for hero in arcanas[user]:
-            s += f'{hero}: {str(get_hero_arcana_price(hero))}\n'
+            s += f'{hero}: {str(get_hero_arcana_price(hero))}$\n'
         await bot.send_message(user, s)
